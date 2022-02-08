@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+<<<<<<< HEAD
 from django.contrib.auth.models import User
 
 class profile(models.Model):
@@ -50,3 +51,5 @@ class proposal(models.Model):
        
     def __str__(self):
         return self.user
+=======
+>>>>>>> b943d88c3f3fe7afcc4299440b755634f1df272f

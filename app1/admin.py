@@ -1,4 +1,5 @@
 from django.contrib import admin
+<<<<<<< HEAD
 from django.contrib.auth.models import User
 from .models import User,profile
 from .models import category
@@ -15,3 +16,7 @@ admin.site.register(post)
 
 admin.site.register(proposal)   
 
+=======
+
+# Register your models here.
+>>>>>>> b943d88c3f3fe7afcc4299440b755634f1df272f

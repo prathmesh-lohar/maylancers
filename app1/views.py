@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from cgitb import text
 from django.shortcuts import render,HttpResponse,redirect
 from django.contrib.auth.models import User,auth
@@ -7,10 +8,14 @@ from django.db.models import Q
 
 
 
+=======
+from django.shortcuts import render
+>>>>>>> b943d88c3f3fe7afcc4299440b755634f1df272f
 
 # Create your views here.
 
 def home(request):
+<<<<<<< HEAD
    
     from .models import category,profile,post
     cat = category.objects.all().order_by('-id')
@@ -224,3 +229,7 @@ def jobs(request):
 def success(request):
     
     return render(request, "success.html")
+=======
+
+    return render(request, "base.html")
+>>>>>>> b943d88c3f3fe7afcc4299440b755634f1df272f
