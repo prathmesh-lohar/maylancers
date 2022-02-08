@@ -36,12 +36,15 @@
 
 
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <nav class="navbar navbar-expand-lg text-center navbar-light fixed-top bg-white dnavbar">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img class="brand " src="{% static 'img/logo.png' %}"> <span class="mx-2 Courgette" style=" color: #f5069d;  font-size: 30px;"> <b>MayLancer</b></span></a>
-                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span> -->
-                </button>
+
+                <div class="logod mx-5">
+                <a class="navbar-brand" href="/"><img class="brand " src="{% static 'img/logo.png' %}"> <span class="mx-2 Courgette" style=" color: #f5069d;  font-size: 30px; "> <b>MayLancer</b></span></a>
+                </div>
+           <!--      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>   --> 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto ">
                         <li class="nav-item">
@@ -59,38 +62,155 @@
                         <li class="nav-item ">
                             <a class="nav-link active" href="/post_job">Post New Job</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active " href="" style="font-size: 18px;
+    margin-top: 6px;" data-bs-toggle="modal" data-bs-target="#exampleModal">  <span class="fa fa-search">
+                           </span>
+                        </a>
 
-                        <li class="nav-item ">
-                            <a class="nav-link active" href="https://wa.link/uujnxz">Contact Us</a>
                         </li>
 
+                     <!--    <li class="nav-item ">
+                            <a class="nav-link active" href="https://wa.link/uujnxz">Contact Us</a>
+                        </li> -->
+
                     </ul>
+
+                   
 
 
 
                     {% if user.is_authenticated %} &nbsp;<span class=""> <b>
                         
                         {{ user.username }}</b></span> &nbsp;&nbsp;
-                    <a href="/logout">Logout</a> {% else %}
+                    <a href="/logout" style="text-decoration: none;color: black;">Logout</a> {% else %}
                     <a href="/login"><button class="btn btn-outline-dark"><span class="fa fa-user"> </span> <b>LogIn</b></button></a> {% endif %}
 
+          
                 </div>
             </div>
         </nav>
     </div>
 
 
-    <div class="navbar nvm " style="">
+    <div class="container-fluid p-0 m-0  text-center fixed-top bg-white mlogo  ">
 
-        <button class="mnbt btn togler btn-outline-light navbar-brand mob-head mr-auto mx-auto rounded-0 navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="font-size: 14px; color: #fff; border-color: #fff">
-        <span class="fa fa-bars navbar-toggler-icon "> </span> Menu
-        </button>
+        <img class=""  src="{% static 'img/logo.png' %}" style="height: 30px; width: 42px; margin-top: -15px;">
+        <span class="mx-2 Courgette " style=" color: #f5069d;  font-size: 30px;"> <b>MayLancer</b></span></a>
+
+       
+        <span class="fa fa-bars fa-lg   bar navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" > </span>
+
+        <span class="fa fa-search fa-lg bar " data-bs-toggle="modal" data-bs-target="#exampleModal"   style="font-size: 20px; margin-top: 2px;"> </span>
 
 
     </div>
 
 
-    {% block main %} {% endblock main %}
+
+
+<style >
+
+    .bar{
+            float: right;
+    padding: 15px;
+    }
+    .navmob{
+        margin-top: 0px;
+
+    }
+    @media only screen and (max-width: 900px) {
+        .navmob{
+            margin-top: 25px;
+        }
+        .navbar{
+            margin-top: 13px;
+        }
+    }
+</style>
+
+    <!-- <div class="navbar navmob nvm mr-auto navbar-light" >
+<!-- 
+        <button class="mnbt btn togler btn-outline-light navbar-brand mob-head mr-auto mx-auto rounded-0 navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="font-size: 14px; color: #fff; border-color: #fff">
+        <span class="fa fa-bars navbar-toggler-icon "> </span> Menu
+        </button> -->
+        <div class="mlog mx-auto">
+
+          {% if user.is_authenticated %} &nbsp;<span class="text-white "> <b>
+
+                        <span class="fa fa-user fa-sm"> </span>
+                        
+                         {{ user.username }}</b></span> &nbsp;&nbsp;
+                    <a href="/logout" style="text-decoration: none; color: white; font-size: 12px;">Logout</a> {% else %}
+                    <a href="/login"><button class="btn btn-outline-light btn-sm"><span class="fa fa-user"> </span> LogIn</button></a> {% endif %}
+                    </div>
+
+
+    </div> -->
+
+<br>
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Search </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+<div class="container  my-3 sbox">
+
+    <form action="/search" method="post" class="form">
+            {% csrf_token %}
+            <div class="input-group">
+
+                <input required name="text" type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="">
+                <div class="input-group-append">
+                    <button class="btn primary-bg bt text-white " type="submit"><span class="fa fa-search"> </span> Search</button>
+
+                </div>
+            </div>
+        </form>
+
+
+</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<style>
+    
+
+@media only screen and (max-width: 900px) {
+    .break{
+        display: none;
+        }}
+
+
+</style>
+
+
+<div class="break">
+    
+    <br>
+    <br>
+    <br>
+</div>
+
+
+    {% block main %}
+
+     {% endblock main %}
 
 
 
@@ -179,6 +299,34 @@
             </div>
         </div>
     </footer>
+
+
+
+<div class="fmenu">
+    
+
+    <div class=" row text-center primary-bg text-white  fixed-bottom"  style="height: 40px;">
+
+    <div class="col"> 
+        <a href="/" style="text-decoration: none; color: white;">
+       <span class="fa fa-home" style="margin-top: 12px;"></span>
+       </a>
+    </div>
+
+     <div class="col"> 
+         <a href="/post_job" style="text-decoration: none; color: white;">
+        <span class="fa fa-plus"  style="margin-top: 12px;"></span>
+    </a>
+    </div>
+
+      <div class="col"> 
+        <a href="/profile" style="text-decoration: none; color: white;">
+        <span class="fa fa-user" style="margin-top:12px;"></span>
+        <a>
+    </div>
+    
+</div>
+</div>
 
 
 
