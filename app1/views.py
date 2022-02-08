@@ -17,7 +17,7 @@ def home(request):
     
     from .models import post
     
-    post = post.objects.all().order_by('-id')[:50]
+    post = post.objects.all().order_by('-id')[:20]
     
     data= {
         'cat':cat,

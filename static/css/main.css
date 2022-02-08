@@ -1,4 +1,38 @@
-.primary-bg {
+
+ 
+
+.mlogo{
+    display: none;
+}
+.mlog{
+    display: none;
+}
+.fmenu{
+    display: none;
+}
+
+@media only screen and (max-width: 900px) {
+    .logod{
+        display: none;
+    }
+    .mlog{
+        display: block;
+    }
+    .fmenu{
+        display: block;
+    }
+    .mlogo{
+        display: block;
+    }
+    .break{
+        display: none;
+    }
+
+    
+}
+
+
+    .primary-bg {
     background-color: rgb(255, 78, 166);
 }
 
@@ -6,7 +40,8 @@
     max-width: 100px;
     max-height: 39px;
     margin-top: -14px;
-}
+    margin-left: 45px;
+}   
 
 .bg-white {
     background: white;
@@ -22,6 +57,24 @@ a u {
     font-size: 22px;
     padding: 10px;
 }
+
+
+@media only screen and (max-width: 900px) {
+
+    .nav-item {
+   
+    font-family: 'Concert One';
+    font-size: medium;
+    padding: 0px;
+    margin-top: 2px;
+    }
+    .navbar-nav{
+        margin-top: 15px;
+        background: 
+    }
+
+}
+
 
 .in {
     margin-top: 50px;
@@ -97,6 +150,7 @@ a u {
 
 .card_main {
     margin-top: -100px;
+
 }
 
 .sub {
@@ -161,6 +215,9 @@ a u {
         margin-top: -10px;
         background-color: #000000cc;
     }
+    .card-main{
+        margin-top: -128px;
+    }
 }
 
 .mnbt {
@@ -176,6 +233,8 @@ a u {
         margin-left: 20%;
     }
 }
+
+
 
 
 /*  */
