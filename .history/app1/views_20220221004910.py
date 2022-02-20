@@ -239,12 +239,12 @@ def post_rate(request):
             user = request.POST.get('user')
             rating = request.POST.get('rating')
             
-            rate = int(rating)
+            rate = str(rating)
             
             from .models import rating
             
             rate = rating(user=user, msg=msg, star=rate)
-            
+            print(msg+user+rating)
             rate.save()
             return redirect('/')
     else:

@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-sk2a-9eq)z!@*n&g5bj!%jh6$0sj9no$qgzs_jupo5zktjr1n)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS=["*"]
+ALLOWED_HOSTS["*"]
 # ALLOWED_HOSTS = ['https://maylancers.com/','http://maylancers.com/', 'localhost:8000' 'maylancers.com','3.135.198.48','http://3.135.198.48/','3.135.198.48','https://3.135.198.48/']
 #CSRF_TRUSTED_ORIGINS = ['https://maylancers.com/','http://maylancers.com/', 'maylancers.com','3.135.198.48','http://3.135.198.48/','','https://3.135.198.48/']
 CSRF_TRUSTED_ORIGINS = ['https://*maylancers.com/','http://*maylancers.com/', 'maylancers.com','3.135.198.48','http://*3.135.198.48/','','https://*3.135.198.48/']

@@ -430,11 +430,19 @@
 
 
 
-
+<style>
+    .cmtm{
+        display: none;
+    }
+</style>
 <div class="container cmtm ">
 
-{% for i in rate %}
-   
+
+
+    <div class="row">
+        {% for i in rate %} {% if forloop.counter0|divisibleby:1 %}
+    </div><br>
+    {% endif %}
     <div class="row ">
         <div class="col-md-6 my-2 ">
             <div class="card ">
@@ -470,9 +478,7 @@
             </div>
         </div>
 </div>
-
 {% endfor %}
-
 </div>
 {% comment %} <br>
 <center>
